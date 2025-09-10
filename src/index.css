@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* MrBeast Games – Mature Dark Theme */
+    --background: 222 32% 8%;        /* Deep navy */
+    --foreground: 210 20% 92%;       /* Soft gray-white */
+
+    --card: 222 32% 12%;             /* Slightly lighter navy */
+    --card-foreground: 210 20% 92%;
+
+    --popover: 222 32% 12%;
+    --popover-foreground: 210 20% 92%;
+
+    /* Professional Primary – Muted Teal */
+    --primary: 180 60% 40%;
+    --primary-foreground: 210 20% 98%;
+
+    /* Professional Secondary – Soft Indigo */
+    --secondary: 240 45% 45%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 222 15% 20%;
+    --muted-foreground: 215 16% 70%;
+
+    /* Accent – Warm Amber (mature highlight) */
+    --accent: 35 85% 55%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 222 20% 25%;
+    --input: 222 20% 20%;
+    --ring: 180 60% 40%;
+
+    /* Gaming Colors refined */
+    --gaming-gold: 40 70% 50%;       /* Deep gold */
+    --gaming-purple: 265 55% 45%;    /* Muted violet */
+    --gaming-cyan: 190 55% 45%;      /* Ocean cyan */
+
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 222 32% 12%;
+    --sidebar-foreground: 210 20% 92%;
+    --sidebar-primary: 180 60% 40%;
+    --sidebar-primary-foreground: 210 20% 98%;
+    --sidebar-accent: 222 20% 18%;
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 222 20% 25%;
+    --sidebar-ring: 180 60% 40%;
+  }
+
+  .light {
+    /* Light Theme – Neutral & Professional */
+    --background: 210 30% 98%;
+    --foreground: 222 32% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 32% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 32% 12%;
+
+    --primary: 180 60% 35%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 240 45% 40%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 210 20% 95%;
+    --muted-foreground: 215 16% 35%;
+
+    --accent: 35 85% 50%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 180 60% 35%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 222 32% 12%;
+    --sidebar-primary: 180 60% 35%;
+    --sidebar-primary-foreground: 210 20% 98%;
+    --sidebar-accent: 210 20% 92%;
+    --sidebar-accent-foreground: 222 32% 12%;
+    --sidebar-border: 210 20% 90%;
+    --sidebar-ring: 180 60% 35%;
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Gaming UI Effects */
+  .neon-glow {
+    box-shadow: 0 0 20px hsl(var(--primary)), 0 0 40px hsl(var(--primary)), 0 0 60px hsl(var(--primary));
+  }
+  
+  .neon-text {
+    text-shadow: 0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--primary));
+  }
+  
+  .gaming-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)));
+  }
+  
+  .beast-gradient {
+    background: linear-gradient(135deg, hsl(120 100% 50%), hsl(240 100% 60%), hsl(320 100% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer components {
+  .game-card {
+    @apply bg-card border border-border rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-primary;
+  }
+  
+  .beast-button {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-bold transition-all duration-300 hover:neon-glow hover:scale-105;
+  }
+}
+
