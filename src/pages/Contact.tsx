@@ -155,7 +155,7 @@ const Contact = () => {
                 <Mail className="h-5 w-5 text-muted-foreground" />
                 <div>
                   <p className="font-medium">Email Support</p>
-                  <p className="text-sm text-muted-foreground">philipadre@gmail.com</p>
+                  <p className="text-sm text-muted-foreground">support@beastgames3.com</p>
                 </div>
               </div>
               
@@ -163,7 +163,7 @@ const Contact = () => {
                 <Phone className="h-5 w-5 text-muted-foreground" />
                 <div>
                   <p className="font-medium">Phone Support</p>
-                  <p className="text-sm text-muted-foreground">1-800-BEAST-GAMES</p>
+                  <p className="text-sm text-muted-foreground">+1 (548) 659-8470</p>
                 </div>
               </div>
               
