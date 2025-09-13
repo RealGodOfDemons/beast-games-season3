@@ -1,5 +1,7 @@
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import { 
   Home, 
   Video, 
@@ -11,10 +13,7 @@ import {
   Trophy,
   Menu,
   LogOut,
-  User
 } from "lucide-react";
-import { useEffect, useState } from "react";
-import { supabase } from "@/integrations/supabase/client"; // adjust if path differs
 
 const Layout = () => {
   const location = useLocation();
@@ -46,21 +45,28 @@ const Layout = () => {
     navigate("/"); // redirect home after logout
   };
 
+  // 🔹 Redirect if not logged in & trying to access protected pages
+  useEffect(() => {
+    const publicPaths = ["/", "/login", "/register"];
+    if (!user && !publicPaths.includes(location.pathname)) {
+      navigate("/login"); // send them to login
+    }
+  }, [user, location, navigate]);
+
   // 🔹 Navbar items
   const navItems = [
     { path: "/", label: "Home", icon: Home },
-    { path: "/video-booth", label: "Video Booth", icon: Video },
-    { path: "/games", label: "Games", icon: Gamepad2 },
-    { path: "/payment", label: "Payment", icon: CreditCard },
-    { path: "/contact", label: "Contact", icon: Mail },
-    ...(!user
+    ...(user
       ? [
-          { path: "/register", label: "Register", icon: UserPlus },
-          { path: "/login", label: "Sign In", icon: LogIn },
+          { path: "/video-booth", label: "Video Booth", icon: Video },
+          { path: "/games", label: "Games", icon: Gamepad2 },
+          { path: "/payment", label: "Payment", icon: CreditCard },
+          { path: "/contact", label: "Contact", icon: Mail },
+          { path: "/logout", label: "Logout", icon: LogOut, action: handleLogout },
         ]
       : [
-          { path: "/profile", label: "Profile", icon: User },
-          { path: "/logout", label: "Logout", icon: LogOut, action: handleLogout },
+          { path: "/register", label: "Register", icon: UserPlus },
+          { path: "/login", label: "Sign In", icon: LogIn },
         ]),
   ];
 
@@ -181,11 +187,21 @@ const Layout = () => {
         <div className="container mx-auto px-4 py-8">
           <div className="text-center">
             <p className="text-muted-foreground">
-              {new Date().getFullYear()} Beast Games Season 3. Win $1,000,000 - Play Now!
+              {new Date().getFullYear()} Beast Games Season 3. Win $5,000,000 - Play Now!
             </p>
             <p className="text-sm text-muted-foreground mt-2">
               Entry fee required. Must be 15+ to participate.
             </p>
+            <p>
+        By using this site, you agree to our{" "}
+        <Link
+          to="/privacy-policy"
+          className="text-blue-400 hover:underline hover:text-blue-300"
+        >
+          Privacy Policy
+        </Link>
+        .
+      </p>
           </div>
         </div>
       </footer>

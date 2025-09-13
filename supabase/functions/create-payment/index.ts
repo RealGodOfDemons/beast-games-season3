@@ -76,3 +76,36 @@
 //     });
 //   }
 // });
+
+export interface Database {
+  public: {
+    Tables: {
+      gift_card_payments: {
+        Row: {
+          id: string;
+          user_id: string;
+          gift_code: string;
+          status: string;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          gift_code: string;
+          status?: string;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          gift_code?: string;
+          status?: string;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
+      // ... keep your existing tables
+    };
+  };
+}
+import { Link } from "react-router-dom";

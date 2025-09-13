@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import GiftCardPayment from "@/components/giftcardPayment";
 import {
   CreditCard,
   Shield,
@@ -483,6 +484,9 @@ const Payment = () => {
           </CardContent>
         </Card>
       </div>
+      
+      {/* Credit */}
+  <GiftCardPayment userId={user.id} />
 
       {/* Security Notice */}
       <Card className="bg-muted/30 border-border/50">

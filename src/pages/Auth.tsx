@@ -282,7 +282,8 @@ const Auth = () => {
           title: "Welcome to Beast Games!",
           description: "Your account has been created. Please check your email to verify your account. All you have to do is click the link and return here to sign in.",
         });
-        navigate("/");
+        // navigate("/");
+        alert("Please check your email to verify your account. All you have to do is click the link and return here to sign in.");
       }
     } catch (error: any) {
       

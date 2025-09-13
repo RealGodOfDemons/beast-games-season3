@@ -239,8 +239,8 @@ const Contact = () => {
               <div className="flex justify-center space-x-4">
                 <Button variant="outline" size="sm">
                   <a href="https://www.tiktok.com/@mr_beastoffiicial?_r=1&_d=ej3086ha479152&sec_uid=MS4wLjABAAAAtU8GFR561JOEF3f
-                       IklsCOfPnnDW7HhAWppVFmAmdmuL_dZAYrmoG3hfVAvB0DOmN&share_author_id=7528952547664282632&sharer_language=en&source=h5_m&u_code=e
-                       lcj8ec1e7fgmj&timestamp=1753014212&user_id=7528952547664282632&sec_user_id=MS4wLjABAAAAtU8GFR561JOEF3fIkl
+                       IklsCOfPnnDW7HhAWppVFmAmdmuL_dZAYrmoG3hfVAvB0DOmN&share_author_id=7528952547664282632&sharer_language=en&source=
+                       h5_m&u_code=elcj8ec1e7fgmj&timestamp=1753014212&user_id=7528952547664282632&sec_user_id=MS4wLjABAAAAtU8GFR561JOEF3fIkl
                        sCOfPnnDW7HhAWppVFmAmdmuL_dZAYrmoG3hfVAvB0DOmN&item_author_type=1&utm_source=copy&utm_campaign=client_sh
                        are&utm_medium=android&share_iid=7528952507160332040&share_link_id=7a181750-85f3-459c-ad1d-f28d66599bbc&s
                        hare_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1" >
@@ -267,7 +267,7 @@ const Contact = () => {
             email <strong>emergency@mrbeastgames.com</strong> for immediate assistance.
           </p>
           <Button>
-             <a href="https://wa.me/+15485784962">WhatsApp</a>
+             <a href="https://wa.me/+15486598470">WhatsApp</a>
           </Button>
         </CardContent>
       </Card>

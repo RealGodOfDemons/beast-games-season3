@@ -11,6 +11,7 @@ import VideoBoothe from "./pages/VideoBoothe";
 import Payment from "./pages/Payment";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/privacy";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
             <Route path="video-booth" element={<VideoBoothe />} />
             <Route path="payment" element={<Payment />} />
             <Route path="contact" element={<Contact />} />
+             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
